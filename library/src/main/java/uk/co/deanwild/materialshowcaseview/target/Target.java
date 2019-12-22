@@ -3,7 +3,6 @@ package uk.co.deanwild.materialshowcaseview.target;
 import android.graphics.Point;
 import android.graphics.Rect;
 
-
 public interface Target {
     Target NONE = new Target() {
         @Override

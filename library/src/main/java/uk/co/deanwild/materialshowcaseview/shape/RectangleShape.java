@@ -1,6 +1,5 @@
 package uk.co.deanwild.materialshowcaseview.shape;
 
-
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
@@ -8,7 +7,6 @@ import android.graphics.Rect;
 import uk.co.deanwild.materialshowcaseview.target.Target;
 
 public class RectangleShape implements Shape {
-
     private boolean fullWidth = false;
 
     private int width = 0;
@@ -16,7 +14,6 @@ public class RectangleShape implements Shape {
     private boolean adjustToTarget = true;
 
     private Rect rect;
-    private int padding;
 
     public RectangleShape(int width, int height) {
         this.width = width;
@@ -46,11 +43,11 @@ public class RectangleShape implements Shape {
     }
 
     private void init() {
-        rect = new Rect(-width / 2, -height / 2, width / 2, height / 2);
+        rect = new Rect(- width / 2, - height / 2, width / 2, height / 2);
     }
 
     @Override
-    public void draw(Canvas canvas, Paint paint, int x, int y) {
+    public void draw(Canvas canvas, Paint paint, int x, int y, int padding) {
         if (!rect.isEmpty()) {
             canvas.drawRect(
                     rect.left + x - padding,
@@ -72,16 +69,6 @@ public class RectangleShape implements Shape {
             else width = bounds.width();
             init();
         }
-    }
-
-    @Override
-    public int getTotalRadius() {
-        return (height / 2) + padding;
-    }
-
-    @Override
-    public void setPadding(int padding) {
-        this.padding = padding;
     }
 
     @Override

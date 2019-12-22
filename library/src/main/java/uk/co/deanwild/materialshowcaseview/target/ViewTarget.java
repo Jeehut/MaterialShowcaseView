@@ -5,9 +5,7 @@ import android.graphics.Point;
 import android.graphics.Rect;
 import android.view.View;
 
-
 public class ViewTarget implements Target {
-
     private final View mView;
 
     public ViewTarget(View view) {
@@ -37,9 +35,5 @@ public class ViewTarget implements Target {
                 location[0] + mView.getMeasuredWidth(),
                 location[1] + mView.getMeasuredHeight()
         );
-    }
-
-    public View getView() {
-        return mView;
     }
 }

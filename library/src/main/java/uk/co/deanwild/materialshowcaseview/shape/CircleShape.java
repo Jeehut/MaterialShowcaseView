@@ -10,10 +10,8 @@ import uk.co.deanwild.materialshowcaseview.target.Target;
  * Circular shape for target.
  */
 public class CircleShape implements Shape {
-
     private int radius = 200;
     private boolean adjustToTarget = true;
-    private int padding;
 
     public CircleShape() {
     }
@@ -47,7 +45,7 @@ public class CircleShape implements Shape {
     }
 
     @Override
-    public void draw(Canvas canvas, Paint paint, int x, int y) {
+    public void draw(Canvas canvas, Paint paint, int x, int y, int padding) {
         if (radius > 0) {
             canvas.drawCircle(x, y, radius + padding, paint);
         }
@@ -57,16 +55,6 @@ public class CircleShape implements Shape {
     public void updateTarget(Target target) {
         if (adjustToTarget)
             radius = getPreferredRadius(target.getBounds());
-    }
-
-    @Override
-    public int getTotalRadius() {
-        return radius + padding;
-    }
-
-    @Override
-    public void setPadding(int padding) {
-        this.padding = padding;
     }
 
     @Override

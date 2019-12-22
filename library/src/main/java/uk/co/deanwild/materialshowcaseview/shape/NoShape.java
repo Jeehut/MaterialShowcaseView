@@ -9,24 +9,13 @@ import uk.co.deanwild.materialshowcaseview.target.Target;
  * A Shape implementation that draws nothing.
  */
 public class NoShape implements Shape {
-
     @Override
     public void updateTarget(Target target) {
         // do nothing
     }
 
     @Override
-    public int getTotalRadius() {
-        return 0;
-    }
-
-    @Override
-    public void setPadding(int padding) {
-        // do nothing
-    }
-
-    @Override
-    public void draw(Canvas canvas, Paint paint, int x, int y) {
+    public void draw(Canvas canvas, Paint paint, int x, int y, int padding) {
         // do nothing
     }
 

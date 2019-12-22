@@ -3,12 +3,9 @@ package uk.co.deanwild.materialshowcaseview;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-
 public class PrefsManager {
-
     public static int SEQUENCE_NEVER_STARTED = 0;
     public static int SEQUENCE_FINISHED = -1;
-
 
     private static final String PREFS_NAME = "material_showcaseview_prefs";
     private static final String STATUS = "status_";
@@ -19,7 +16,6 @@ public class PrefsManager {
         this.context = context;
         this.showcaseID = showcaseID;
     }
-
 
     /***
      * METHODS FOR INDIVIDUAL SHOWCASE VIEWS
@@ -40,14 +36,12 @@ public class PrefsManager {
         return context
                 .getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
                 .getInt(STATUS + showcaseID, SEQUENCE_NEVER_STARTED);
-
     }
 
     void setSequenceStatus(int status) {
         SharedPreferences internal = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
         internal.edit().putInt(STATUS + showcaseID, status).apply();
     }
-
 
     public void resetShowcase() {
         resetShowcase(context, showcaseID);
